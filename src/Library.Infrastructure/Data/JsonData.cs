@@ -4,6 +4,29 @@ using Microsoft.Extensions.Configuration;
 
 namespace Library.Infrastructure.Data;
 
+public Book? SearchBookByTitle(string title)
+{
+        return Books?.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+}
+
+
+public class ConsoleApp{
+        // Existing fields...
+            JsonData _jsonData;
+                public ConsoleApp(ILoanService loanService, IPatronService patronService, IPatronRepository patronRepository, ILoanRepository loanRepository, JsonData jsonData)
+                    {
+                                _patronRepository = patronRepository;
+                                        _loanRepository = loanRepository;
+                                                _loanService = loanService;
+                                                        _patronService = patronService;
+                                                                _jsonData = jsonData;
+                    }
+                        // Other methods...
+
+}
+                  
+                  
+
 public class JsonData
 {
     public List<Author>? Authors { get; set; }
